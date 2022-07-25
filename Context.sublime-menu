@@ -1,5 +1,6 @@
 [{
-    "caption": "Copy with quotes",
+    "id": "copy-with-quotes",
+    "caption": "Copy With Quotes",
     "children": [{
       "caption": "Java/C#",
       "command": "cwq_java_csharp"
