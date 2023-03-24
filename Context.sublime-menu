@@ -1,20 +1,32 @@
-[{
-    "id": "copy-with-quotes",
-    "caption": "Copy With Quotes",
-    "children": [{
-      "caption": "Java/C#",
-      "command": "cwq_java_csharp"
-    }, {
-      "caption": "C/C++",
-      "command": "cwq_cpp"
-    }, {
-      "caption": "PHP/Perl",
-      "command": "cwq_php_perl"
-    }, {
-      "caption": "Delphi",
-      "command": "cwq_delphi"
-    }, {
-      "caption": "Obj-C",
-      "command": "cwq_objc"
-    }]
-}]
+[
+    {
+        "id": "copy-with-quotes",
+        "caption": "Copy With Quotes",
+        "children": [
+            {
+                "caption": "Java/C#",
+                "command": "cwq_java_csharp"
+            },
+            {
+                "caption": "C/C++",
+                "command": "cwq_cpp"
+            },
+            {
+                "caption": "PHP/Perl",
+                "command": "cwq_php_perl"
+            },
+            {
+                "caption": "Delphi",
+                "command": "cwq_delphi"
+            },
+            {
+                "caption": "Obj-C",
+                "command": "cwq_objc"
+            },
+            {
+                "caption": "Lua(Table)",
+                "command": "cwq_lua"
+            }
+        ]
+    }
+]

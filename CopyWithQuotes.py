@@ -73,6 +73,20 @@ class CwqObjcCommand(sublime_plugin.TextCommand):
         return
 
 
+class CwqLuaCommand(sublime_plugin.TextCommand):
+    # Convert Tabs To Spaces
+    def run(self, edit):
+        for sel_region in self.view.sel():
+            if not sel_region.empty():
+                sel_text = self.view.substr(sel_region)
+                q_text = quotes_lua(sel_text)
+                sublime.set_clipboard(q_text)
+                sublime.status_message("quotes for Lua !")
+            else:
+                sublime.status_message("quotes error !")
+        return
+
+
 def quotes_java_csharp(str):
     sep = "\n"
     lines = str.splitlines()
@@ -154,5 +168,22 @@ def quotes_objc(str):
             content += line + "\\n\\" + sep
         else:
             content += line + '"'
+        count += 1
+    return content
+
+
+def quotes_lua(str):
+    sep = "\n"
+    lines = str.splitlines()
+    #lines = re.split(sep, str)
+    #lines = [x for x in lines if x != '']
+    content = ""
+    count = 0
+    for line in lines:
+        line = line.replace('"', '\\"')
+        if (count < len(lines) - 1):
+            content += 'str:fmt("' + line + '"),' + sep
+        else:
+            content += 'str:fmt("' + line + '")'
         count += 1
     return content

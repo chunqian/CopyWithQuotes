@@ -1,4 +1,4 @@
-this plugin is used for sublime text 3 ，add quotes for multiline text for Java/C#、C/C++、PHP/Perl、Delphi、Obj-C source code string.
+this plugin is used for sublime text 3, add quotes for multiline text for Java/C#, C/C++, PHP/Perl, Delphi, Obj-C source code string.
 
 
 sample：
@@ -32,4 +32,4 @@ sample：
 			where t.msg_id = \"2\" and z=1"
 
 how to use：
-    select text in sublime text，click mouse right key , find context menu "Copy with quotes"，click submenu for target language。
+    select text in sublime text, click mouse right key, find context menu "Copy with quotes", click submenu for target language.
