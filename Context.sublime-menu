@@ -4,6 +4,10 @@
         "caption": "Copy With Quotes",
         "children": [
             {
+                "caption": "Java(Sql)",
+                "command": "cwq_java_sql"
+            },
+            {
                 "caption": "Java/C#",
                 "command": "cwq_java_csharp"
             },

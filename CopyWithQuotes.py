@@ -3,6 +3,20 @@ import sublime_plugin
 import re
 
 
+class CwqJavaSqlCommand(sublime_plugin.TextCommand):
+    # Convert Tabs To Spaces
+    def run(self, edit):
+        for sel_region in self.view.sel():
+            if not sel_region.empty():
+                sel_text = self.view.substr(sel_region)
+                q_text = quotes_java_sql(sel_text)
+                sublime.set_clipboard(q_text)
+                sublime.status_message("quotes for Java/C# !")
+            else:
+                sublime.status_message("quotes error !")
+        return
+
+
 class CwqJavaCsharpCommand(sublime_plugin.TextCommand):
     # Convert Tabs To Spaces
     def run(self, edit):
@@ -85,6 +99,23 @@ class CwqLuaCommand(sublime_plugin.TextCommand):
             else:
                 sublime.status_message("quotes error !")
         return
+
+
+def quotes_java_sql(str):
+    sep = "\n"
+    lines = str.splitlines()
+    #lines = re.split(sep, str)
+    #lines = [x for x in lines if x != '']
+    content = ""
+    count = 0
+    for line in lines:
+        line = line.replace('"', '\\"')
+        if (count < len(lines) - 1):
+            content += 'Str.fmt("' + line + '") + ' + sep
+        else:
+            content += 'Str.fmt("' + line + '")'
+        count += 1
+    return content
 
 
 def quotes_java_csharp(str):
